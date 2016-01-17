@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-show="loaded">
+    <div class="userInfo">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-circle" src="{{ user.avatar_url }}" alt="Generic placeholder image" width="140"
+                     height="140">
+
+                <h3>
+                    <center> {{user.name}}
+                        <span class="smallname"><a href="{{user.html_url}}" target="_blank"> {{user.login}} </a></span>
+                    </center>
+                </h3>
+                <center>Followers: {{ user.followers }} - Following: {{ user.following }}<br>Repos: {{ user.public_repos
+                    }}</p></center>
+            </div>
+            <div class="col-md-4">
+                <div class="repolist clearfix">
+                    <p ng-hide="orgsFound">No Organisations</p>
+
+                    <div ng-show="orgsFound">
+                        <p><strong>orgs List:</strong></p>
+                        <table class="table">
+                            <tbody>
+                            <tr ng-repeat="org in orgs">
+                                <td>
+                                    <img class="img-circle" src="{{ org.avatar_url }}" alt="Generic placeholder image"
+                                         width="40"
+                                         height="40">
+                                    <a href="{{org.html_url}}" target="_blank"> {{org.login}} </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">.col-md-4</div>
+        </div>
+    </div>
+</div>
+
+<div class="repolist clearfix">
+    <p ng-hide="subscriptionsFound">No subscriptions!</p>
+
+    <div ng-show="subscriptionsFound">
+        <p><strong>subscriptions List:</strong></p>
+        <label>Search: <input ng-model="searchText"></label>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>owner</th>
+                <th>Stat</th>
+                <th>git</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="subscription in subscriptions | filter:searchText">
+                <td>
+                    {{subscription.name}}
+                </td>
+                <td>
+                    <a ui-sref="user({username: subscription.owner.login})">{{subscription.owner.login}}</a>
+
+                </td>
+                <td>
+                    <a ui-sref="repo({username: subscription.owner.login, repo: subscription.name})">Stats</a>
+                </td>
+                <td>
+                    <a href="{{subscription.html_url}}" target="_blank"> Git </a></li>
+                </td>
+                <td>
+                    <!--<a href="/user/{{owner}}/repot/{{subscription.name}}" > Stat</a></li>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

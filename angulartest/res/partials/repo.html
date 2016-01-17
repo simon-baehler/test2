@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-show="loaded">
+    <div class="userInfo">
+        <h2>
+            <center> {{repodata.name}}
+            </center>
+        </h2>
+        <p>
+        <center>created at: {{ repodata.created_at }}</center>
+        <center>updated at: {{ repodata.updated_at }}</center>
+        <center>pushed at: {{ repodata.pushed_at }}</center>
+        </p>
+        <div class="row">
+            <div class="col-md-8">
+                <center>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>
+                                clone url: {{repodata.clone_url}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                forks count {{repodata.forks_count}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </p></center>
+            </div>
+            <div class="col-md-4">
+                <div class="repolist clearfix">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Description</div>
+    <div class="panel-body">
+        <div class="desc">
+            <p class="italic">{{repodata.description}}</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">User's commit</div>
+            <div class="panel-body">
+                <canvas id="doughnut" class="chart chart-doughnut"
+                        chart-data="contributorscontributions" chart-labels="contributorsNames">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Languages</div>
+            <div class="panel-body">
+                <canvas id="doughnut2" class="chart chart-doughnut"
+                        chart-data="languagesStats" chart-labels="languagesNames">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">User's commit</div>
+            <div class="panel-body">
+                <canvas id="doughnut" class="chart chart-doughnut"
+                        chart-data="contributorscontributions" chart-labels="contributorsNames">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
