@@ -100,16 +100,13 @@
     tweb.controller('navbarcrtl', function ($scope, $http, $stateParams, $state) {
         $scope.userNotFound = false;
         $scope.loaded = false;
-        $scope.user = {};
         $scope.getGitInfo = function () {
             $scope.userNotFound = false;
             $scope.loaded = false;
 
             $http.get("https://api.github.com/users/" + $scope.username)
                 .success(function (data) {
-                    $scope.user = data;
                     $scope.loaded = true;
-
                     $state.go('user', {username: $scope.username});
                 })
                 .error(function () {
