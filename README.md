@@ -1,7 +1,3 @@
----
-title: "Test2"
----
-
 ## Introduction
 Dans ce 2eme projet j'avais à reéaliser une application parmis quatre proposées :
 
@@ -74,7 +70,7 @@ Trois requete vers l'api GitHub
 	https://api.github.com/users/:username/orgs
 	Pour recuperer les informations des organisations dont l'utilisateur fait parti
 
-### /user/:username/repo/:repo
+### Page /user/:username/repo/:repo
 Cette page offre la possibilité d'avoir une vue graphique des informations d'un repo d'un utilisateur, telle que le nombre de commit de chaque contributeur et le nombre
 de ligne de chaque language utilisé.
 

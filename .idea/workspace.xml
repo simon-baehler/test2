@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2a56112f-987a-4b2b-889f-d8d7df222571" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angulartest/res/js/custom/main.js" afterPath="$PROJECT_DIR$/angulartest/res/js/custom/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angulartest/res/partials/repo.html" afterPath="$PROJECT_DIR$/angulartest/res/partials/repo.html" />
     </list>
     <ignored path="Projet2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angulartest/res/js/custom/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="134" column="90" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="90" />
               <folding />
             </state>
@@ -86,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="repo.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="repo.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angulartest/res/partials/repo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.6781116">
+              <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -130,8 +131,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/angulartest/res/partials/user.html" />
         <option value="$PROJECT_DIR$/angulartest/res/css/custom.css" />
-        <option value="$PROJECT_DIR$/angulartest/res/partials/repo.html" />
         <option value="$PROJECT_DIR$/angulartest/res/js/custom/main.js" />
+        <option value="$PROJECT_DIR$/angulartest/res/partials/repo.html" />
       </list>
     </option>
   </component>
@@ -763,18 +764,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angulartest/res/partials/repo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angulartest/res/js/custom/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="134" column="90" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="90" />
           <folding />
         </state>
       </provider>
@@ -787,10 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angulartest/res/js/custom/main.js">
+    <entry file="file://$PROJECT_DIR$/angulartest/res/partials/repo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5">
-          <caret line="134" column="90" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="90" />
+        <state vertical-scroll-proportion="0.6781116">
+          <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
           <folding />
         </state>
       </provider>
