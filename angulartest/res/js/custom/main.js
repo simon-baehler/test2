@@ -30,9 +30,6 @@
     tweb.controller('repo', function ($scope, $location, $stateParams, $http) {
         $scope.userNotFound = false;
         $scope.loaded = false;
-        $scope.contributors;
-        $stateParams.username;
-        $stateParams.repo;
 
         $scope.contributorsNames = [];
         $scope.contributorscontributions = [];
@@ -47,12 +44,14 @@
 
         $scope.owner = $stateParams.username
 
+        //recupère les informations de base sur le repos du user (lien, date creation etc)
         $http.get("https://api.github.com/repos/" + $stateParams.username + "/" + $stateParams.repo)
             .success(function (data) {
                 $scope.repodata = data;
                 $scope.loaded = true;
 
 
+                //recupère les inforamtions sur les contributeurs du repo
                 $http.get(data.contributors_url)
                     .success(function (data) {
                         $scope.contributors_url = data;
@@ -62,6 +61,7 @@
                         }
                     })
 
+                //recupres les informations sur les languages utilisé
                 $http.get(data.languages_url)
                     .success(function (data) {
                         $scope.languages_url = data;
@@ -71,7 +71,9 @@
                             $scope.languagesStats.push($scope.languages_url[property]);
                         }
                     })
-
+                //TO DO
+                //Non implémentée pour le moment, repère les infromations sur le nombre de commit de chaque
+                //contributeur durant les X semaines
                 $http.get("https://api.github.com/repos/"+ $stateParams.username + "/" + $stateParams.repo + "/stats/contributors")
                     .success(function (data) {
                         $scope.user_stats = data;
@@ -99,6 +101,7 @@
             $scope.userNotFound = false;
             $scope.loaded = false;
 
+            //on fait une requete vers l'api pour savoir si le user tapé exisite
             $http.get("https://api.github.com/users/" + $scope.username)
                 .success(function (data) {
                     $scope.loaded = true;
@@ -113,20 +116,22 @@
     tweb.controller('user', function ($scope, $stateParams, $http) {
         $scope.userNotFound = false;
         $scope.loaded = false;
-        $stateParams.username;
         $scope.owner = $stateParams.username
 
+        //recuperation des informations du user (avatar, lien github)
         $http.get("https://api.github.com/users/" + $stateParams.username)
             .success(function (data) {
                 $scope.user = data;
                 $scope.loaded = true;
 
+                //recuperation des repos du user
                 $http.get("https://api.github.com/users/" + $stateParams.username + "/subscriptions")
                     .success(function (data) {
                         $scope.subscriptions = data;
                         $scope.subscriptionsFound = data.length;
                     });
 
+                //recpueration des ogranaisation du user
                 $http.get("https://api.github.com/users/" + $stateParams.username + "/orgs")
                     .success(function (data) {
                         $scope.orgs = data;
