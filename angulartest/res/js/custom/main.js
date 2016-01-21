@@ -2,9 +2,6 @@
     var tweb = angular.module('tweb', ['ngRoute', 'chart.js', 'ui.router']);
 
     tweb.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-
-
-
         $locationProvider.html5Mode(true);
 
         $stateProvider.state('main', {
@@ -24,8 +21,6 @@
             url: '^/user/:username/repo/:repo',
             controller: 'repo'
         });
-
-
     });
 
     tweb.controller('main', function ($scope, $location) {
