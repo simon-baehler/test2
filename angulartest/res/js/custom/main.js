@@ -21,13 +21,23 @@
             url: '^/user/:username/repo/:repo',
             controller: 'repo'
         });
+
+        $stateProvider.state('error', {
+            templateUrl: '/res/partials/error.html',
+            url: '^/error',
+            controller: 'error'
+        });
+    });
+    tweb.controller('error', function () {
+
     });
 
-    tweb.controller('main', function ($scope, $location) {
+
+    tweb.controller('main', function () {
 
     });
 
-    tweb.controller('repo', function ($scope, $location, $stateParams, $http) {
+    tweb.controller('repo', function ($scope, $stateParams, $http, $state) {
         $scope.userNotFound = false;
         $scope.loaded = false;
 
@@ -77,20 +87,16 @@
                 $http.get("https://api.github.com/repos/"+ $stateParams.username + "/" + $stateParams.repo + "/stats/contributors")
                     .success(function (data) {
                         $scope.user_stats = data;
-                        console.log("stats" + data);
-                        console.log(data);
-
                         for (i = 0; i < data.length; i++) {
                             $scope.userStatsName.push($scope.user_stats[i].author.login);
                             $scope.contributorscontributions.push($scope.contributors_url[i].contributions);
                         }
 
-                        console.log($scope.userStatsName);
-
                     })
             })
             .error(function () {
                 $scope.userNotFound = true;
+                $state.go('error');
             })
     });
 
@@ -109,11 +115,12 @@
                 })
                 .error(function () {
                     $scope.userNotFound = true;
+                    $state.go('error');
                 })
         };
     });
 
-    tweb.controller('user', function ($scope, $stateParams, $http) {
+    tweb.controller('user', function ($scope, $stateParams, $http, $state) {
         $scope.userNotFound = false;
         $scope.loaded = false;
         $scope.owner = $stateParams.username
@@ -140,6 +147,7 @@
             })
             .error(function () {
                 $scope.userNotFound = true;
+                $state.go('error');
             })
 
 
